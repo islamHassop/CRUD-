@@ -1,0 +1,29 @@
+﻿@model Course
+
+<form method="post" asp-action="UpdateItem" asp-controller="Course">
+    <div asp-validation-summary="All"></div>
+    <input asp-for="@Model.ID" type="hidden" />
+    <div class="form-group">
+        <label asp-for="@Model.Name">Name</label>
+        <input asp-for="@Model.Name" class="form-control" />
+        <span asp-validation-for="@Model.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Degree">Degree</label>
+        <input asp-for="@Model.Degree" class="form-control" />
+        <span asp-validation-for="@Model.Degree" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Min_Degree">Min Degree</label>
+        <input asp-for="@Model.Min_Degree" class="form-control" />
+        <span asp-validation-for="@Model.Min_Degree" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.DeptId">Department</label>
+        <select asp-for="@Model.DeptId" class="form-control" asp-items="@ViewBag.ListDept"></select>
+        <span asp-validation-for="@Model.DeptId" class="text-danger"></span>
+    </div>
+  
+ 
+    <input type="submit" class="btn btn-primary" value="Save" />
+</form>

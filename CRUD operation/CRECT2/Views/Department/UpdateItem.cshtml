@@ -1,0 +1,22 @@
+﻿@model Department
+
+
+<form method="post" asp-action="UpdateItem" asp-controller="Department">
+    <div asp-validation-summary="All"></div>
+    <input asp-for="@Model.ID" type="hidden" />
+    <div class="form-group">
+        <label asp-for="@Model.Name">Name</label>
+        <input asp-for="@Model.Name" class="form-control" />
+        <span asp-validation-for="@Model.Name" class="text-danger"></span>
+    </div>
+   
+    <div class="form-group">
+        <label asp-for="@Model.Manager">Manager</label>
+        <input asp-for="@Model.Manager" class="form-control" />
+        <span asp-validation-for="@Model.Manager" class="text-danger"></span>
+    </div>
+   
+    <input type="submit" class="btn btn-primary" value="Save" />
+</form>
+
+
